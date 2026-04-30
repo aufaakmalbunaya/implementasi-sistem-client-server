@@ -8,7 +8,7 @@
 - **Project Manager:** Nawal Arifah
 - **Kelompok:** Kelompok 5
 - **Akun GitHub:** [`aufaakmalbunaya`](https://github.com/aufaakmalbunaya)
-- **Repository:** [PASTE_GITHUB_LINK_HERE]
+- **Repository:** [https://github.com/aufaakmalbunaya/implementasi-sistem-client-server](https://github.com/aufaakmalbunaya/implementasi-sistem-client-server)
 
 ## Deskripsi Proyek
 
@@ -18,7 +18,7 @@ sedangkan client berperan sebagai pengguna yang menjawab soal.
 
 Server akan:
 1. Membuat TCP socket.
-2. Bind ke `0.0.0.0:5012`.
+2. Bind ke `10.6.6.41:5020`.
 3. Listen koneksi dari client.
 4. Menerima koneksi client.
 5. Mengirim *welcome message* dan soal aritmatika acak.
@@ -33,7 +33,7 @@ Komunikasi menggunakan **string ber-encoding UTF-8** dan mengikuti pola
 ## Arsitektur Sistem
 
 ```
-+---------+        TCP/5012        +---------+
++---------+        TCP/5020        +---------+
 | Client  |  <------------------>  | Server  |
 | (Py)    |   request / response   | (Py)    |
 +---------+                        +---------+
@@ -41,7 +41,7 @@ Komunikasi menggunakan **string ber-encoding UTF-8** dan mengikuti pola
 
 ## Fitur Server
 
-- Listen di `0.0.0.0:5012`.
+- Listen di `0.0.0.0:5020`.
 - Multi-client menggunakan **threading**.
 - Generator soal aritmatika (`+`, `-`, `*`).
 - Validasi jawaban (integer / non-integer / `exit`).
@@ -50,7 +50,7 @@ Komunikasi menggunakan **string ber-encoding UTF-8** dan mengikuti pola
 
 ## Fitur Client
 
-- Connect ke `HOST:5012`.
+- Connect ke `HOST:5020`.
 - Menerima welcome + soal dari server.
 - Mengirim jawaban via `input()`.
 - Menerima dan menampilkan respons server.
@@ -59,7 +59,7 @@ Komunikasi menggunakan **string ber-encoding UTF-8** dan mengikuti pola
 
 ## Alur Komunikasi
 
-1. Server start → listen di port 5012.
+1. Server start → listen di port 5020.
 2. Client connect → server kirim welcome + soal.
 3. Client kirim jawaban (string + `\n`).
 4. Server balas: `BENAR`, `SALAH. Jawaban benar: X`, atau `Input tidak valid`.
@@ -104,7 +104,7 @@ python src/server.py
 Output yang diharapkan:
 
 ```
-[2025-xx-xx ...] Server berjalan di 0.0.0.0:5012
+[2025-xx-xx ...] Server berjalan di 0.0.0.0:5020
 Menunggu koneksi client...
 ```
 
@@ -125,7 +125,7 @@ python src/client.py
 
 **Sisi Client:**
 ```
-Terhubung ke server 127.0.0.1:5012
+Terhubung ke server 127.0.0.1:5020
 Selamat datang di Kuis Aritmatika!
 Ketik 'exit' untuk keluar.
 SOAL: Berapa hasil dari 7 + 5 ?
@@ -145,8 +145,8 @@ Server: Input tidak valid
 
 | Error | Penyebab | Solusi |
 |-------|----------|--------|
-| `ConnectionRefusedError` | Server belum dijalankan / port salah | Jalankan `server.py` dulu, cek port 5012 |
-| `OSError: [WinError 10048]` | Port 5012 dipakai aplikasi lain | Tutup aplikasi lain atau ubah `PORT` di kedua file |
+| `ConnectionRefusedError` | Server belum dijalankan / port salah | Jalankan `server.py` dulu, cek port 5020 |
+| `OSError: [WinError 10048]` | Port 5020 dipakai aplikasi lain | Tutup aplikasi lain atau ubah `PORT` di kedua file |
 | `ModuleNotFoundError` | Python tidak terinstall benar | Reinstall Python, centang `Add to PATH` |
 | Firewall memblokir koneksi | Windows Defender Firewall | Allow Python di firewall saat prompt muncul |
 
@@ -166,4 +166,4 @@ Repository ini memiliki **minimal 3 commit** dengan pesan deskriptif:
 
 ## Lisensi / Catatan Akademik
 
-Proyek ini dibuat untuk memenuhi tugas akhir mata kuliah **Kapita Selekta Sistem Komputer dan Jaringan**. Tidak untuk kepentingan komersial.
+Proyek ini dibuat untuk memenuhi tugas mata kuliah **Kapita Selekta Sistem Komputer dan Jaringan**. Tidak untuk kepentingan komersial.

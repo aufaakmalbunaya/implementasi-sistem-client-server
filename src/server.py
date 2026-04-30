@@ -4,8 +4,8 @@ import threading
 import logging
 from datetime import datetime
 
-HOST = "0.0.0.0"
-PORT = 5012
+HOST = "10.6.6.41"
+PORT = 5020
 
 logging.basicConfig(
     filename="server.log",

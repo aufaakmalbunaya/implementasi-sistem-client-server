@@ -1,7 +1,7 @@
 import socket
 
 HOST = "10.6.6.41"
-PORT = 5012
+PORT = 5020
 
 def main():
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

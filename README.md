@@ -8,7 +8,7 @@
 - **Project Manager:** Nawal Arifah
 - **Kelompok:** Kelompok 5
 - **Akun GitHub:** [`aufaakmalbunaya`](https://github.com/aufaakmalbunaya)
-- **Repository:** [PASTE_GITHUB_LINK_HERE]
+- **Repository:** [https://github.com/aufaakmalbunaya/implementasi-sistem-client-server](https://github.com/aufaakmalbunaya/implementasi-sistem-client-server)
 
 ## Deskripsi Proyek
 
@@ -59,7 +59,7 @@ Komunikasi menggunakan **string ber-encoding UTF-8** dan mengikuti pola
 
 ## Alur Komunikasi
 
-1. Server start → listen di port 5012.
+1. Server start → listen di port 5020.
 2. Client connect → server kirim welcome + soal.
 3. Client kirim jawaban (string + `\n`).
 4. Server balas: `BENAR`, `SALAH. Jawaban benar: X`, atau `Input tidak valid`.
@@ -166,4 +166,4 @@ Repository ini memiliki **minimal 3 commit** dengan pesan deskriptif:
 
 ## Lisensi / Catatan Akademik
 
-Proyek ini dibuat untuk memenuhi tugas akhir mata kuliah **Kapita Selekta Sistem Komputer dan Jaringan**. Tidak untuk kepentingan komersial.
+Proyek ini dibuat untuk memenuhi tugas mata kuliah **Kapita Selekta Sistem Komputer dan Jaringan**. Tidak untuk kepentingan komersial.
